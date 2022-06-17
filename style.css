@@ -1,0 +1,66 @@
+
+:root {
+  --WIDTH: 100%;
+}
+
+
+#checkBoxOuterBox {
+    width: var(--WIDTH); 
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+  }
+  
+  .labels {
+    width: var(--WIDTH); 
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+  }
+  
+  label, input {
+    margin:0;
+    padding:0px;
+    font-family:mono;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  #reset-container {
+    width: var(--WIDTH);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .heading {
+    font-weight: bold;
+  }
+
+  #reset {
+    
+  }
+
+  #button-row {
+    display:flex;
+    justify-content: space-between;
+    width: var(--WIDTH);
+  }
+
+  #sets-container {
+    width: var(--WIDTH);
+    display: flex;
+
+  }
+
+  #transpositions, #inversions {
+    flex: 1;
+  }
+
+  @media only screen and (min-width: 400px) {
+    :root {
+      --WIDTH: 80%;
+    }
+  }
