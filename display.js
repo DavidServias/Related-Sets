@@ -1,4 +1,5 @@
-export function createCheckBoxes() {
+export function createCheckBoxes(integers) {
+    // let letters = ['C','C#','D','Eb','E','F','F#','G','Ab','A','Bb','B'];
     var checkBoxOuterBox = document.getElementById("checkBoxOuterBox");
     for (let i = 0; i < 12; i++) {
         // create container
@@ -14,16 +15,32 @@ export function createCheckBoxes() {
         checkBox.setAttribute("value", i);
         checkBoxContainer.appendChild(checkBox);
 
-        // create label element
+        // create empty label elements
         let label = document.createElement("p");
+        label.setAttribute("id","label" + i.toString() );
         label.setAttribute("for","pc" + i.toString() );
-        label.innerHTML = i;
+        label.innerHTML = ""; 
         checkBoxContainer.appendChild(label);
-
         checkBoxOuterBox.appendChild(checkBoxContainer);
     }
+    applyLabels(integers);
     
 };
+
+export function applyLabels(integers) {
+    let letters = ['C','C#','D','Eb','E','F','F#','G','Ab','A','Bb','B'];
+    for (let i=0; i<12; i++) {
+        // populate labels
+        let label = document.getElementById("label" + i.toString() );
+        if (integers===true){
+            label.innerHTML = i;
+        }  
+        else {
+            label.innerHTML = letters[i];
+        };
+        
+    };
+}
 
 export function clearCheckBoxes() {
     var checkboxes = document.getElementsByName('pc');

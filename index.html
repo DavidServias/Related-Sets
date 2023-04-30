@@ -4,8 +4,17 @@
 <head>
     <link rel="stylesheet"
           href="style.css">
-</head>
+      <!--include relatedSets.js files -->
+      <!-- TODO: How to address CORS?-->
 
+
+      <script src="relatedSets.js" type="module"></script>
+      <script src="display.js" type="module"></script>
+
+</head>
+<h1>Find Related Sets</h1>
+
+<button id="integers_or_letters">Disply Letters</button>
 <div id='checkBoxOuterBox'></div>
 <div id='reset-container'></div>     
   
@@ -26,6 +35,4 @@
    <div id="inversions"></div>
 </div>
   
-  <script src="./relatedSets.js" type="module"></script>
-      
-  <script src="./display.js" type="module"></script>
+  

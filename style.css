@@ -44,6 +44,9 @@
   }
 
   #button-row {
+    padding-top:10px;
+    padding-bottom: 10px;
+
     display:flex;
     justify-content: space-between;
     width: var(--WIDTH);

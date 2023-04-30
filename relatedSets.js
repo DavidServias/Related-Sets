@@ -1,21 +1,37 @@
+// import { applyLabels } from './display.js';
 import * as display from '/display.js';
 
 //TODO:
 // 4. add some color
 
 
+let integers = false;
+
 const start = function() {
-    display.createCheckBoxes();
+    display.createCheckBoxes(integers);
     display.reset();
     // add event listeners
+    document.getElementById('integers_or_letters').addEventListener('click', toggleIntegersOrLetters);
     document.getElementById('reset').addEventListener('click', display.reset);
     document.getElementById('getSets').addEventListener('click', getPitchClassSet);
-
 }
 
 
+function toggleIntegersOrLetters() {
+  if (integers === false) {
+      integers = true;
+      document.getElementById('integers_or_letters').innerHTML = 'Display Letters';
+  }
+  else {
+      integers = false;
+      document.getElementById('integers_or_letters').innerHTML = 'Display Integers'; 
+  } 
+  display.applyLabels(integers);
+};
+
+
 class SetFunctions {
-    // input = starting pitch. 
+  // input = starting pitch. 
   // nuHalfSteps = number of half steps to add
   // convert to mod 12. If result is greater than 11, subract
   // 12 until result is between 0 and 11.
